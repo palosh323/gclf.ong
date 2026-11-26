@@ -1,0 +1,740 @@
+
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GCLF | Guerres contra la Fam</title>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --green: #164b36;
+  --green2: #28694b;
+  --cream: #f7f6f0;
+  --gold: #d7b66b;
+  --text: #28372f;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--cream);
+  color: var(--text);
+}
+
+header {
+  background: white;
+  padding: 20px 8%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 15px #0000000c;
+}
+
+.logo {
+  color: var(--green);
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.logo span {
+  color: var(--gold);
+}
+
+nav {
+  display: flex;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+nav a {
+  text-decoration: none;
+  color: #34473b;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+nav a:hover {
+  color: #b28b42;
+}
+
+.hero {
+  min-height: 610px;
+  background:
+  linear-gradient(90deg, #102d22e8, #102d2260),
+  url('https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=2000&q=85')
+  center/cover;
+  display: flex;
+  align-items: center;
+  padding: 80px 10%;
+  color: white;
+}
+
+.hero-content {
+  max-width: 720px;
+}
+
+.tag {
+  color: #e4c47d;
+  letter-spacing: 3px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(42px, 6vw, 75px);
+  line-height: 1.08;
+  margin: 25px 0;
+}
+
+.hero p {
+  font-size: 18px;
+  line-height: 1.8;
+  max-width: 600px;
+  color: #eeeeee;
+  margin-bottom: 30px;
+}
+
+.btn {
+  display: inline-block;
+  background: var(--gold);
+  color: #263a2d;
+  text-decoration: none;
+  padding: 16px 27px;
+  border-radius: 4px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  border: none;
+  cursor: pointer;
+  transition: .3s;
+}
+
+.btn:hover {
+  background: white;
+  transform: translateY(-3px);
+}
+
+section {
+  padding: 90px 10%;
+}
+
+.section-tag {
+  color: #b08a45;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(30px, 4vw, 43px);
+  color: var(--green);
+  margin: 15px 0 25px;
+}
+
+.description {
+  line-height: 1.9;
+  color: #66736b;
+  max-width: 720px;
+  font-size: 16px;
+}
+
+.about {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 65px;
+  align-items: center;
+}
+
+.about img {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.stats {
+  background: var(--green);
+  color: white;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  text-align: center;
+  padding: 45px 8%;
+  gap: 25px;
+}
+
+.stats strong {
+  display: block;
+  font-family: 'Playfair Display', serif;
+  font-size: 36px;
+  color: var(--gold);
+  margin-bottom: 8px;
+}
+
+.stats span {
+  font-size: 13px;
+  color: #e1e9e3;
+}
+
+.center {
+  text-align: center;
+}
+
+.center .description {
+  margin: auto;
+}
+
+.projects {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  margin-top: 45px;
+}
+
+.project {
+  background: white;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 8px 30px #0000000a;
+  transition: .3s;
+}
+
+.project:hover {
+  transform: translateY(-7px);
+}
+
+.project img {
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+}
+
+.project-content {
+  padding: 27px;
+}
+
+.project h3 {
+  color: var(--green);
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  margin-bottom: 13px;
+}
+
+.project p {
+  color: #778078;
+  line-height: 1.7;
+  font-size: 14px;
+}
+
+.campaigns {
+  background: #eaece5;
+}
+
+.campaign {
+  display: flex;
+  gap: 30px;
+  padding: 25px 0;
+  border-bottom: 1px solid #d2d8cf;
+  align-items: center;
+}
+
+.year {
+  font-family: 'Playfair Display', serif;
+  font-size: 38px;
+  color: #b08a45;
+  min-width: 110px;
+}
+
+.campaign h3 {
+  color: var(--green);
+  margin-bottom: 8px;
+}
+
+.campaign p {
+  color: #67736a;
+  line-height: 1.6;
+}
+
+.partners {
+  background: white;
+}
+
+.partner-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  margin-top: 40px;
+}
+
+.partner {
+  border: 1px solid #e6e9e4;
+  padding: 40px 15px;
+  text-align: center;
+  border-radius: 5px;
+  background: #fafbf9;
+}
+
+.partner h3 {
+  font-size: 27px;
+  color: var(--green);
+  margin-bottom: 12px;
+}
+
+.partner p {
+  color: #778078;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.partner small {
+  display: block;
+  color: #a17d3d;
+  margin-top: 15px;
+  font-weight: 700;
+}
+
+.goals {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  align-items: center;
+}
+
+.goals img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.goals li {
+  list-style: none;
+  padding: 13px 0;
+  border-bottom: 1px solid #dfe3dd;
+  color: #59685e;
+  line-height: 1.6;
+}
+
+.donate {
+  background:
+  linear-gradient(#113e2de8, #113e2de8),
+  url('https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?auto=format&fit=crop&w=1800&q=85')
+  center/cover;
+  color: white;
+  text-align: center;
+}
+
+.donate h2 {
+  color: white;
+}
+
+.donate .description {
+  color: #e2e8e3;
+  margin: auto;
+}
+
+.amounts {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin: 35px 0;
+}
+
+.amounts button {
+  background: transparent;
+  color: white;
+  border: 1px solid #d7b66b;
+  border-radius: 4px;
+  padding: 18px 35px;
+  font-size: 20px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: .3s;
+}
+
+.amounts button:hover {
+  background: var(--gold);
+  color: var(--green);
+}
+
+#missatge {
+  font-size: 22px;
+  font-weight: 700;
+  margin: 25px auto;
+  line-height: 1.7;
+}
+
+#confeti {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 999;
+}
+
+footer {
+  background: #102d22;
+  color: white;
+  padding: 55px 10% 25px;
+  text-align: center;
+}
+
+footer h2 {
+  color: white;
+  font-size: 30px;
+}
+
+footer p {
+  color: #c3d0c6;
+  margin: 12px 0;
+  font-size: 13px;
+}
+
+footer .slogan {
+  color: var(--gold);
+  font-family: 'Playfair Display', serif;
+  font-size: 21px;
+  margin: 25px 0;
+}
+
+.note {
+  background: #fff5dc;
+  color: #775c27;
+  padding: 12px;
+  font-size: 12px;
+  margin-top: 25px;
+}
+
+@media(max-width:800px) {
+  header {
+    gap: 20px;
+  }
+  nav {
+    gap: 13px;
+  }
+  .about, .goals {
+    grid-template-columns: 1fr;
+  }
+  .projects, .partner-grid {
+    grid-template-columns: 1fr;
+  }
+  .stats {
+    grid-template-columns: 1fr;
+  }
+  section {
+    padding: 65px 7%;
+  }
+  .hero {
+    min-height: 540px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">GCLF<span>.</span></div>
+  <nav>
+    <a href="#nosaltres">NOSALTRES</a>
+    <a href="#projectes">PROJECTES</a>
+    <a href="#campanyes">CAMPANYES</a>
+    <a href="#col·laboradors">COL·LABORADORS</a>
+    <a href="#donar">DONAR</a>
+  </nav>
+</header>
+
+<div class="hero">
+  <div class="hero-content">
+    <div class="tag">Guerres contra la Fam · Des de 1946</div>
+    <h1>Amb tu comença un món millor.</h1>
+    <p>
+      Treballem per un futur on cap xiquet haja de patir fam,
+      on totes les persones tinguen un lloc segur on viure
+      i on la solidaritat siga més forta que les guerres.
+    </p>
+    <a class="btn" href="#donar">COL·LABORA AMB NOSALTRES</a>
+  </div>
+</div>
+
+<section id="nosaltres" class="about">
+  <div>
+    <div class="section-tag">La nostra història</div>
+    <h2>Una missió que va començar el 1946</h2>
+    <p class="description">
+      Guerres contra la Fam (GCLF) va ser fundada el 3 d'agost
+      de 1946 per Juan Juaquin, després de la Segona Guerra Mundial.
+      Va nàixer amb la missió d'ajudar els xiquets afectats per
+      les conseqüències dels conflictes.
+      <br><br>
+      La nostra seu està a Espanya i el nostre àmbit d'actuació
+      és internacional. Treballem per proporcionar aliments,
+      refugi i suport a les persones que més ho necessiten.
+    </p>
+  </div>
+  <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=900&q=85" alt="Infants en una activitat solidària">
+</section>
+
+<div class="stats">
+  <div>
+    <strong>1946</strong>
+    <span>Any de fundació</span>
+  </div>
+  <div>
+    <strong>300+</strong>
+    <span>Xiquets ajudats en la campanya de 1950</span>
+  </div>
+  <div>
+    <strong>400+</strong>
+    <span>Xiquets ajudats en la campanya de 1970</span>
+  </div>
+</div>
+
+<section id="projectes" class="center">
+  <div class="section-tag">El nostre treball</div>
+  <h2>Què fem per ajudar?</h2>
+  <p class="description">
+    Desenvolupem projectes per millorar la vida dels xiquets,
+    les famílies i les persones afectades per la fam i les guerres.
+  </p>
+
+  <div class="projects">
+    <div class="project">
+      <img src="https://images.unsplash.com/photo-1593113598332-cd288d649433?auto=format&fit=crop&w=800&q=85" alt="Distribució d'aliments">
+      <div class="project-content">
+        <h3>Alimentació</h3>
+        <p>Volem garantir que tots els xiquets tinguen aliments suficients i una nutrició adequada.</p>
+      </div>
+    </div>
+
+    <div class="project">
+      <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=85" alt="Habitatges">
+      <div class="project-content">
+        <h3>Refugi i habitatge</h3>
+        <p>Defensem el dret de totes les persones a tindre una llar segura on descansar.</p>
+      </div>
+    </div>
+
+    <div class="project">
+      <img src="https://images.unsplash.com/photo-1472162314594-eca3c3d90c8c?auto=format&fit=crop&w=800&q=85" alt="Ajuda a la infància">
+      <div class="project-content">
+        <h3>Protecció infantil</h3>
+        <p>Donem suport als xiquets afectats pels conflictes i les situacions de pobresa.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="campanyes" class="campaigns">
+  <div class="section-tag">La nostra trajectòria</div>
+  <h2>Campanyes que fan història</h2>
+
+  <div class="campaign">
+    <div class="year">1950</div>
+    <div>
+      <h3>Ajuda a Israel</h3>
+      <p>Una campanya que va aconseguir ajudar més de 300 xiquets.</p>
+    </div>
+  </div>
+
+  <div class="campaign">
+    <div class="year">1970</div>
+    <div>
+      <h3>Campanya al nord d'Àfrica</h3>
+      <p>Una iniciativa que va ajudar més de 400 xiquets afectats per la fam.</p>
+    </div>
+  </div>
+
+  <div class="campaign">
+    <div class="year">2026</div>
+    <div>
+      <h3>Projecte d'ajuda a Israel</h3>
+      <p>Hem començat a treballar amb xiquets i persones majors.</p>
+    </div>
+  </div>
+
+  <div class="campaign">
+    <div class="year">2027-28</div>
+    <div>
+      <h3>Expansió al sud d'Àfrica</h3>
+      <p>Volem ampliar els nostres projectes per arribar a més persones.</p>
+    </div>
+  </div>
+
+  <div class="campaign">
+    <div class="year">2030</div>
+    <div>
+      <h3>Un futur més solidari</h3>
+      <p>El nostre objectiu és convertir-nos en una ONG amb una gran presència i moltes donacions a Àfrica.</p>
+    </div>
+  </div>
+</section>
+
+<section id="col·laboradors" class="partners center">
+  <div class="section-tag">Junts som més forts</div>
+  <h2>Els nostres col·laboradors</h2>
+  <p class="description">
+    En el nostre projecte escolar proposem col·laboracions
+    amb empreses de distribució alimentària per facilitar
+    l'arribada de productes bàsics a les persones que ho necessiten.
+  </p>
+
+  <div class="partner-grid">
+    <div class="partner">
+      <h3>Mercadona</h3>
+      <p>Col·laboració proposada per facilitar aliments i productes de primera necessitat.</p>
+      <small>COL·LABORADOR PROPOSAT</small>
+    </div>
+
+    <div class="partner">
+      <h3>Consum</h3>
+      <p>Proposta de suport a les campanyes de recollida i distribució d'aliments.</p>
+      <small>COL·LABORADOR PROPOSAT</small>
+    </div>
+
+    <div class="partner">
+      <h3>Lidl</h3>
+      <p>Proposta de col·laboració per ajudar les famílies amb menys recursos.</p>
+      <small>COL·LABORADOR PROPOSAT</small>
+    </div>
+  </div>
+
+  <div class="note">
+    Les col·laboracions amb aquestes empreses formen part de la simulació del projecte escolar i no representen acords comercials reals.
+  </div>
+</section>
+
+<section class="goals">
+  <div>
+    <div class="section-tag">La nostra visió</div>
+    <h2>Un món sense fam ni guerres</h2>
+    <p class="description">
+      El nostre propòsit és que cap xiquet haja de viure
+      sense menjar ni una llar. Volem que tots tinguen
+      les mateixes oportunitats i puguen créixer en un
+      entorn segur.
+    </p>
+    <ul>
+      <li>Garantir un plat de menjar per a cada xiquet.</li>
+      <li>Oferir refugi i protecció a les persones necessitades.</li>
+      <li>Ampliar les nostres campanyes internacionals.</li>
+      <li>Animar la societat a participar en projectes solidaris.</li>
+    </ul>
+  </div>
+  <img src="https://images.unsplash.com/photo-1509099836639-18ba1795216d?auto=format&fit=crop&w=900&q=85" alt="Infància i solidaritat">
+</section>
+
+<section class="donate" id="donar">
+  <div class="section-tag">La teua ajuda importa</div>
+  <h2>Fes possible un món millor</h2>
+  <p class="description">
+    Cada aportació representa una oportunitat per ajudar
+    les persones que més ho necessiten. Tria una quantitat
+    i participa en la nostra causa.
+  </p>
+
+  <div class="amounts">
+    <button onclick="donacio(5)">5 €</button>
+    <button onclick="donacio(10)">10 €</button>
+    <button onclick="donacio(20)">20 €</button>
+    <button onclick="donacio(50)">50 €</button>
+  </div>
+
+  <div id="missatge"></div>
+  <p style="font-size:12px;color:#ddd">
+    Simulació escolar. No es realitzen cobraments reals.
+  </p>
+</section>
+
+<footer>
+  <h2>GCLF</h2>
+  <p>GUERRES CONTRA LA FAM</p>
+  <div class="slogan">Amb tu comença un món millor.</div>
+  <p>Fundada el 3 d'agost de 1946 · Espanya · Àmbit internacional</p>
+  <p>Projecte escolar de Pablo, Quique, Elisa i Marta</p>
+  <p>© 2026 GCLF · Web de demostració escolar</p>
+</footer>
+
+<canvas id="confeti"></canvas>
+
+<script>
+function donacio(quantitat) {
+  const missatge = document.getElementById("missatge");
+
+  missatge.innerHTML =
+    "GRÀCIES PER LA TEUA DONACIÓ DE " +
+    quantitat + " €!<br>Amb tu comença un món millor.";
+
+  llançarConfeti();
+}
+
+function llançarConfeti() {
+  const canvas = document.getElementById("confeti");
+  const ctx = canvas.getContext("2d");
+
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+
+  let peces = [];
+
+  for (let i = 0; i < 180; i++) {
+    peces.push({
+      x: Math.random() * canvas.width,
+      y: -Math.random() * canvas.height,
+      size: Math.random() * 9 + 4,
+      speed: Math.random() * 5 + 2,
+      color: ["#d7b66b","#4ca477","#ffffff","#b8d7c2"]
+        [Math.floor(Math.random() * 4)],
+      rotation: Math.random() * 6
+    });
+  }
+
+  let frames = 0;
+
+  function animar() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    peces.forEach(p => {
+      ctx.fillStyle = p.color;
+      ctx.save();
+      ctx.translate(p.x, p.y);
+      ctx.rotate(p.rotation);
+      ctx.fillRect(-p.size/2, -p.size/2, p.size, p.size);
+      ctx.restore();
+
+      p.y += p.speed;
+      p.x += Math.sin(p.y / 30);
+      p.rotation += 0.08;
+    });
+
+    frames++;
+
+    if (frames < 150) {
+      requestAnimationFrame(animar);
+    } else {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+    }
+  }
+
+  animar();
+}
+</script>
+
+</body>
+</html>
